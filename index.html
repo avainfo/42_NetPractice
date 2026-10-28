@@ -21,7 +21,41 @@
 		<input id='input_login' type=text size=15 placeholder="login"><br />
 		<span class='footnote'>Moulinette will use it to know your own configuration.</span>
 		<br /><br />
-		<input type=button value="Start!" onclick='save_login();'>
+		<label for="input_level">Niveau de départ :</label>
+        <select id="input_level">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11 — Bonus : Deux machines en /28</option>
+          <option value="12">12 — Bonus : Un petit lien en /30</option>
+          <option value="13">13 — Bonus : Trois machines en /27</option>
+          <option value="14">14 — Bonus : Quatre machines en /26</option>
+          <option value="15">15 — Bonus : Deux LAN et leurs passerelles</option>
+          <option value="16">16 — Bonus : Trois LAN sur un routeur</option>
+          <option value="17">17 — Bonus : Des masques de tailles différentes</option>
+          <option value="18">18 — Bonus : Routes spécifiques uniquement</option>
+          <option value="19">19 — Bonus : Deux routeurs : routes aller-retour</option>
+          <option value="20">20 — Bonus : Deux routeurs : réparer les interfaces</option>
+          <option value="21">21 — Bonus : Trois routeurs en chaîne</option>
+          <option value="22">22 — Bonus : Trois routeurs : masques et routes</option>
+          <option value="23">23 — Bonus : Quatre routeurs : trouver le chemin</option>
+          <option value="24">24 — Bonus : Quatre LAN de tailles différentes</option>
+          <option value="25">25 — Bonus : Deux LAN vers Internet</option>
+          <option value="26">26 — Bonus : Trois LAN et une route de retour</option>
+          <option value="27">27 — Bonus : Trois routeurs vers Internet</option>
+          <option value="28">28 — Bonus : Découpage VLSM et Internet</option>
+          <option value="29">29 — Bonus : Quatre routeurs : routage complet</option>
+          <option value="30">30 — Bonus : Synthèse : quatre sites et Internet</option>
+        </select>
+        <input type=button value="Start!" onclick='save_login();'>
+        <span class="footnote">11–30 : exercices bonus non officiels, à adresses fixes.</span>
 	  </div>
 	  <div id='tab_1' class="tab">
 		In this evaluation mode, three random levels from 6 to 10 will be offered to be solved in 15 minutes.

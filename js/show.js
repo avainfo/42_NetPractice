@@ -300,7 +300,8 @@ function all_goals()
 		g_sim_logs = '<center><b style="font-size:110%;">--- generated for login <i>'+g_my_login+'</i> ---</b></center>';
     else
 		g_sim_logs = '<center><b style="font-size:110%;">--- evaluation mode round '+g_eval_lvls.length+' ---</b></center>';
-    document.getElementById("goals_id").innerHTML = '<h2>Level '+level+': </h2>\n';
+    document.getElementById("goals_id").innerHTML = '<h2>Level '+level+(typeof level_title !== 'undefined' ? ' — '+level_title : '')+': </h2>\n';
+    document.getElementById('goals_id').innerHTML += '<a href="index.html">Accueil / choisir un niveau</a><br />';
     var nb = 0;
 	goals.forEach(elem => nb += show_goals(elem));
     document.getElementById("goals_id").innerHTML += '<input type=button value="Check again" onclick="all_goals();"> &nbsp; <input type=button value="Get my config" onclick="dl_config();">';
@@ -308,7 +309,7 @@ function all_goals()
     {
 		if (g_my_login != '')
 		{
-			if (level < 10)
+			if (level < 30)
 				document.getElementById("goals_id").innerHTML += " &nbsp; <input type=button value='Next level' onclick='window.location=\"level"+(level+1)+".html\";'>";
 			else
 				document.getElementById("goals_id").innerHTML += " &nbsp; <input type=button value='Complete!' onclick='window.location=\"end.html\";'>";
@@ -326,6 +327,8 @@ function load_board()
 {
     if (!(g_my_login = localStorage.getItem("g_my_login")))
 		g_my_login = ''; // will means evaluation & full random
+    // Bonus levels are training exercises even when opened directly.
+    if (level > 10 && g_my_login == '') g_my_login = 'bonus';
     g_rand_prev = level + hash_login(g_my_login); // initialize replayable pseudo random generator
     if (g_my_login == '')
 		if (!(g_eval_lvls = JSON.parse(localStorage.getItem("g_my_eval"))))

@@ -12,7 +12,7 @@ function save_login()
 		e.style.border = "2px solid red";
     }
     else
-		setTimeout(()=>{ window.location = 'level1.html'; }, 100);
+		setTimeout(()=>{ window.location = 'level'+document.getElementById('input_level').value+'.html'; }, 100);
 }
 
 function start_eval()
