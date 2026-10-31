@@ -248,3 +248,8 @@ body {
     font-size:70%;
     font-style:italic;
 }
+
+/* Keep bonus routing tables readable beyond the viewport edge. */
+.bonus .host_info_div {
+    width: 340px;
+}

@@ -1,7 +1,7 @@
 // Bonus training exercise. Fixed addresses; independent of the login.
 var level = 26;
 
-var level_title = "Trois LAN et une route de retour";
+var level_title = "Deux LAN et une route de retour";
 
 var hosts = [
   {
